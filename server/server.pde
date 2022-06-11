@@ -4,8 +4,8 @@ import java.util.Map;
 
 Server webServer;
 
-Request rq;
-Response rs;
+Request rq;  // И создаём объекты для обработки запросов клиентов (rq).
+Response rs; // И создаём объекты для обработки ответов нашего сервера (rs).
 
 void setup() {
   size(400, 400);
@@ -55,7 +55,7 @@ class Response { //Note: didn't use a hashmap for this, so the type is slightly 
     if (http_status == 200) {
       response += " OK";
     } else if (http_status == 404) {
-      response += " Not Found";
+      response += " Not Found 1";
     } else if (http_status == 500) {
       response += " Server Error";
     }
@@ -111,7 +111,7 @@ void draw() {
         rs.type = "text/html";
       } else {
         rs.http_status = 404;
-        rs.body = "Not found.".getBytes();
+        rs.body = "Not found.2".getBytes();
       }
     } else {
       rs.http_status = 500;
